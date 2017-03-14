@@ -2,7 +2,7 @@
 //  HomeViewController.swift
 //  Instagram
 //
-//  Created by Derek Ho on 3/11/17.
+//  Created by Dephanie Ho on 3/11/17.
 //  Copyright © 2017 Dephanie Ho. All rights reserved.
 //
 
@@ -75,8 +75,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let user = PFUser.current(){
             let query = PFQuery(className: "Post")
             query.order(byDescending: "createdAt")
-            //query.includeKey(user.username!)
-            query.includeKey("_p_author")
+            query.includeKey("author")
             query.limit = 20
             
             //fetch data asynchronously

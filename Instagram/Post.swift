@@ -2,7 +2,7 @@
 //  Post.swift
 //  Instagram
 //
-//  Created by Derek Ho on 3/13/17.
+//  Created by Dephanie Ho on 3/13/17.
 //  Copyright © 2017 Dephanie Ho. All rights reserved.
 //
 
@@ -16,12 +16,9 @@ class Post: NSObject {
         let caption = caption ?? "Check out my pic!"
         //add relevant fields to the object
         post["media"] = getImage(image: image)
-        post["_p_author"] = PFUser.current()
-        post["author"] = PFUser.current()?.username
+        post["author"] = PFUser.current()
         post["caption"] = caption
-        //post["likesCount"] = 0
-        //post["commentsCount"] = 0
-        
+
         //Save object
         post.saveInBackground(block: completion)
     }
